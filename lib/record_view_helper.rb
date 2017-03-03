@@ -1,0 +1,3 @@
+module RecordViewHelper
+  # Your code goes here...
+end
