@@ -1,9 +1,8 @@
-$:.push File.expand_path("../lib", __FILE__)
-
-# Maintain your gem's version:
+# coding: utf-8
+lib = File.expand_path("../lib", __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "record_view_helper/version"
 
-# Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "record_view_helper"
   s.version     = RecordViewHelper::VERSION
@@ -16,6 +15,12 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
+  if s.respond_to?(:metadata)
+    s.metadata["yard.run"] = "yri"
+  end
+
+  s.add_runtime_dependency "activesupport"
+  s.add_runtime_dependency "actionview"
   s.add_development_dependency "rails", "~> 5.1.0.beta1"
   s.add_development_dependency "rspec-rails", "~> 3"
   s.add_development_dependency "bundler"
