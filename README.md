@@ -45,5 +45,9 @@ Or install it yourself as:
 $ gem install record_view_helper
 ```
 
+### See also
+
+- [table-for](https://github.com/hunterae/table-for)
+
 ## License
 The gem is available as open source under the terms of the [MIT License](https://narazaka.net/license/MIT?2017).
