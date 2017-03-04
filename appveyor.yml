@@ -1,0 +1,25 @@
+version: "{build}"
+branches:
+  except:
+    - gh-pages
+install:
+  - set RUBY_HOME=C:\Ruby%ruby_version%
+  - set PATH=%RUBY_HOME%\bin;%PATH%
+  - |
+    %RUBY_HOME%\DevKit\devkitvars.bat
+  - ruby --version
+  - gem --version
+  - gem install bundler --no-document
+  - bundle --version
+  - bundle config --local path vendor/bundle
+  - bundle install
+test_script:
+  - bundle exec rake spec
+build: off
+deploy: off
+environment:
+  matrix:
+    - ruby_version: 23
+    - ruby_version: 23-x64
+cache:
+  - vendor/bundle
