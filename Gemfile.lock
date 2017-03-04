@@ -161,7 +161,7 @@ PLATFORMS
 DEPENDENCIES
   bundler
   onkcop
-  rails (~> 5.1.0.beta1)
+  rails (>= 4)
   rake
   record_view_helper!
   rspec

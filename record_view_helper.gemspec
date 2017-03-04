@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency "activesupport"
   s.add_runtime_dependency "actionview"
-  s.add_development_dependency "rails", "~> 5.1.0.beta1"
+  s.add_development_dependency "rails", ">= 4"
   s.add_development_dependency "rspec-rails", "~> 3"
   s.add_development_dependency "bundler"
   s.add_development_dependency "rake"
