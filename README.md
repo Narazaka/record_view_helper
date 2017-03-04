@@ -45,7 +45,7 @@ Or install it yourself as:
 $ gem install record_view_helper
 ```
 
-### See also
+## See also
 
 - [table-for](https://github.com/hunterae/table-for)
 
