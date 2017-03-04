@@ -102,7 +102,7 @@ module RecordViewHelper
         if record_view_helper_config.locale_name
           record_view_helper_config.locale_name.call(table_name, column)
         else
-          t("#{record_view_helper_config.locale_namespace}.#{table_name}.columns.#{column}")
+          "#{record_view_helper_config.locale_namespace}.#{table_name}.columns.#{column}"
         end
       )
     end
