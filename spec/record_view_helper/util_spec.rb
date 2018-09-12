@@ -116,13 +116,13 @@ describe RecordViewHelper do
 
     context "simple link" do
       let(:template) { "<%= format_record_value(@record, :id, nil, :foo_path) %>" }
-      let(:expect_template) { '<%= link_to "#{@record.id}", foo_path(@record.id) %>' }
+      let(:expect_template) { "<%= link_to \"\#{@record.id}\", foo_path(@record.id) %>" }
       it { is_expected.to eq expect_rendered }
     end
 
     context "deep link" do
       let(:template) { "<%= format_record_value(@record, :id, nil, foo_bar_path: [:name, :id]) %>" }
-      let(:expect_template) { '<%= link_to "#{@record.id}", foo_bar_path(@record.name, @record.id) %>' }
+      let(:expect_template) { "<%= link_to \"\#{@record.id}\", foo_bar_path(@record.name, @record.id) %>" }
       it { is_expected.to eq expect_rendered }
     end
   end

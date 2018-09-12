@@ -53,11 +53,11 @@ module RecordViewHelper
   #     - s.only :id, :name
   #   / recommended for complex settings
   #   / see RecordValueSetting for details
-  def table_for(records, options = {})
+  def table_for(records, options = {}) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     setting = RecordValueSetting.build_from_hash!(
       records.first.attributes.keys,
       records.first.class.name.tableize,
-      options
+      options,
     )
     yield setting if block_given?
     content_tag(
@@ -70,9 +70,9 @@ module RecordViewHelper
             safe_join(
               setting.columns.map do |column|
                 content_tag("th", record_view_helper_t(records.first.class, column), setting.header_attrs[column])
-              end
-            )
-          )
+              end,
+            ),
+          ),
         ),
         content_tag(
           "tbody",
@@ -83,14 +83,14 @@ module RecordViewHelper
                 safe_join(
                   setting.columns.map do |column|
                     content_tag("td", format_record_value(record, column, setting.formats[column], setting.links[column]), setting.attrs[column])
-                  end
-                )
+                  end,
+                ),
               )
-            end
-          )
+            end,
+          ),
         ),
       ]),
-      options
+      options,
     )
   end
 end

@@ -28,7 +28,7 @@ module RecordViewHelper
       else
         deep_record_values(record, format || [column])
       end
-    formatted_value = safe_join values.map { |value| [format_view_value(value), " "] }.flatten[0..-2]
+    formatted_value = safe_join values.map {|value| [format_view_value(value), " "] }.flatten[0..-2]
     case link
     when String, Symbol
       link_record_value(record, formatted_value, link, [column])
@@ -49,7 +49,7 @@ module RecordViewHelper
   #   deep_record_values(record, [:a, [:a, :b]]) == [record.a, record.a.b]
   #
   def deep_record_values(record, columns)
-    columns.map { |column| deep_record_value(record, column) }
+    columns.map {|column| deep_record_value(record, column) }
   end
 
   # deep call
@@ -61,7 +61,7 @@ module RecordViewHelper
   #   deep_record_value(record, [:a, :b]) == record.a.b
   #
   def deep_record_value(record, column)
-    Array(column).reduce(record) { |receiver, method| receiver.try(:public_send, method) }
+    Array(column).reduce(record) {|receiver, method| receiver.try(:public_send, method) }
   end
 
   # format value
@@ -107,7 +107,7 @@ module RecordViewHelper
             record_view_helper_config.locale_name.call(table_name, column)
           else
             "#{record_view_helper_config.locale_namespace}.#{table_name}.columns.#{column}"
-          end
+          end,
         )
       end
     end

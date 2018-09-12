@@ -8,11 +8,11 @@ module RecordViewHelper
   # @yieldparam [RecordValueSetting] setting setting object
   # @yieldreturn [void]
   # @return [ActiveSupport::SafeBuffer] rendered result
-  def dl_for(record, options = {})
+  def dl_for(record, options = {}) # rubocop:disable Metrics/AbcSize
     setting = RecordValueSetting.build_from_hash!(
       record.attributes.keys,
       record.class.name.tableize,
-      options
+      options,
     )
     yield setting if block_given?
     content_tag(
@@ -23,9 +23,9 @@ module RecordViewHelper
             content_tag("dt", record_view_helper_t(record.class, column), setting.header_attrs[column]),
             content_tag("dd", format_record_value(record, column, setting.formats[column], setting.links[column]), setting.attrs[column]),
           ]
-        end
+        end,
       ),
-      options
+      options,
     )
   end
 end

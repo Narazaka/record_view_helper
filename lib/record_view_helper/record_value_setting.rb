@@ -29,7 +29,7 @@ module RecordViewHelper
         formats: options.delete(:formats),
         links: options.delete(:links),
         attrs: options.delete(:attrs),
-        header_attrs: options.delete(:header_attrs)
+        header_attrs: options.delete(:header_attrs),
       )
     end
 
@@ -41,7 +41,16 @@ module RecordViewHelper
     # @param [Hash<Symbol, Symbol|Hash<Symbol, Symbol|Array<Symbol>>>] links links settings
     # @param [Hash<Symbol, Hash<Symbol, String>>] attrs column value dom tag attrs
     # @param [Hash<Symbol, Hash<Symbol, String>>] header_attrs column header dom tag attrs
-    def initialize(columns, table_name, only: nil, except: nil, formats: nil, links: nil, attrs: nil, header_attrs: nil)
+    def initialize( # rubocop:disable Metrics/ParameterLists
+      columns,
+      table_name,
+      only: nil,
+      except: nil,
+      formats: nil,
+      links: nil,
+      attrs: nil,
+      header_attrs: nil
+    )
       @columns = columns
       @table_name = table_name
       @only = only || []

@@ -1,5 +1,4 @@
-# coding: utf-8
-lib = File.expand_path("../lib", __FILE__)
+lib = File.expand_path("lib", __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "record_view_helper/version"
 
@@ -19,15 +18,15 @@ Gem::Specification.new do |s|
     s.metadata["yard.run"] = "yri"
   end
 
-  s.add_runtime_dependency "activesupport"
   s.add_runtime_dependency "actionview"
+  s.add_runtime_dependency "activesupport"
   s.add_runtime_dependency "tzinfo-data" if RUBY_PLATFORM =~ /mswin|mingw/
-  s.add_development_dependency "rails", ">= 4"
-  s.add_development_dependency "rspec-rails", "~> 3"
   s.add_development_dependency "bundler"
+  s.add_development_dependency "onkcop"
+  s.add_development_dependency "rails", ">= 4"
   s.add_development_dependency "rake"
   s.add_development_dependency "rspec"
-  s.add_development_dependency "yard"
+  s.add_development_dependency "rspec-rails", "~> 3"
   s.add_development_dependency "simplecov"
-  s.add_development_dependency "onkcop"
+  s.add_development_dependency "yard"
 end
