@@ -20,7 +20,7 @@ module RecordViewHelper
       safe_join(
         setting.columns.map do |column|
           safe_join [
-            content_tag("dt", record_view_helper_t(setting.table_name, column), setting.header_attrs[column]),
+            content_tag("dt", record_view_helper_t(record.class, column), setting.header_attrs[column]),
             content_tag("dd", format_record_value(record, column, setting.formats[column], setting.links[column]), setting.attrs[column]),
           ]
         end

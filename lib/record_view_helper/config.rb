@@ -42,5 +42,22 @@ module RecordViewHelper
     #
     # @return [String] (default = "record_view_helper")
     attr_accessor :locale_namespace
+
+    # Proc which returns name for column
+    #
+    # @example in Rails
+    #   Rails.application.config.record_view_helper.column_name =
+    #     ->(table_class, column) { raw "[#{column}]<br>#{table_class.columns_hash[column.to_s].comment}" }
+    #
+    # @example basic
+    #   class MyView < ActionView::Base
+    #     include RecordViewHelper
+    #   end
+    #
+    #   MyView.record_view_helper_config.locale_name =
+    #     ->(table_class, column) { raw "[#{column}]<br>#{table_class.columns_hash[column.to_s].comment}" }
+    #
+    # @return [Proc]
+    attr_accessor :column_name
   end
 end

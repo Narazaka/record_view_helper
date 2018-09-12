@@ -97,13 +97,18 @@ module RecordViewHelper
 
   private
 
-    def record_view_helper_t(table_name, column)
-      t(
-        if record_view_helper_config.locale_name
-          record_view_helper_config.locale_name.call(table_name, column)
-        else
-          "#{record_view_helper_config.locale_namespace}.#{table_name}.columns.#{column}"
-        end
-      )
+    def record_view_helper_t(table_class, column)
+      if record_view_helper_config.column_name
+        record_view_helper_config.column_name.call(table_class, column)
+      else
+        table_name = table_class.name.tableize
+        t(
+          if record_view_helper_config.locale_name
+            record_view_helper_config.locale_name.call(table_name, column)
+          else
+            "#{record_view_helper_config.locale_namespace}.#{table_name}.columns.#{column}"
+          end
+        )
+      end
     end
 end
