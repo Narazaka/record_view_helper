@@ -47,7 +47,7 @@ module RecordViewHelper
     #
     # @example in Rails
     #   Rails.application.config.record_view_helper.column_name =
-    #     ->(table_class, column) { raw "[#{column}]<br>#{table_class.columns_hash[column.to_s].comment}" }
+    #     ->(table_class, column) { "[#{column}]<br>#{table_class.columns_hash[column.to_s].comment}".html_safe }
     #
     # @example basic
     #   class MyView < ActionView::Base
@@ -55,7 +55,7 @@ module RecordViewHelper
     #   end
     #
     #   MyView.record_view_helper_config.locale_name =
-    #     ->(table_class, column) { raw "[#{column}]<br>#{table_class.columns_hash[column.to_s].comment}" }
+    #     ->(table_class, column) { "[#{column}]<br>#{table_class.columns_hash[column.to_s].comment}".html_safe }
     #
     # @return [Proc]
     attr_accessor :column_name
