@@ -1,3 +1,5 @@
+require "active_support/core_ext/object/try"
+
 module RecordViewHelper
   # build definition list(dl) for records
   #
@@ -10,8 +12,8 @@ module RecordViewHelper
   # @return [ActiveSupport::SafeBuffer] rendered result
   def dl_for(record, options = {}) # rubocop:disable Metrics/AbcSize
     setting = RecordValueSetting.build_from_hash!(
-      record.attributes.keys,
-      record.class.name.tableize,
+      record.try(:attributes).try(:keys) || record.keys,
+      record.class.try(:name).try(:tableize),
       options,
     )
     yield setting if block_given?

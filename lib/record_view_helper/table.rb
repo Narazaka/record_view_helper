@@ -1,3 +1,5 @@
+require "active_support/core_ext/object/try"
+
 module RecordViewHelper
   # build table for records
   # @param [Enumerable<Object>] records records
@@ -55,8 +57,8 @@ module RecordViewHelper
   #   / see RecordValueSetting for details
   def table_for(records, options = {}) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     setting = RecordValueSetting.build_from_hash!(
-      records.first.attributes.keys,
-      records.first.class.name.tableize,
+      records.try(:klass).try(:column_names) || records.first.try(:attributes).try(:keys) || records.first.try(:keys) || [],
+      records.first.try(:class).try(:name).try(:tableize),
       options,
     )
     yield setting if block_given?
