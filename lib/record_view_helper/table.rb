@@ -71,7 +71,7 @@ module RecordViewHelper
             "tr",
             safe_join(
               setting.columns.map do |column|
-                content_tag("th", record_view_helper_t(records.first.class, column), setting.header_attrs[column])
+                content_tag("th", record_view_helper_t(records.try(:klass) || records.first.class, column), setting.header_attrs[column])
               end,
             ),
           ),
