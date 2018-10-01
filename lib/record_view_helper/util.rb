@@ -35,6 +35,8 @@ module RecordViewHelper
     when Hash
       path_method, param_columns = link.first
       link_record_value(record, formatted_value, path_method, param_columns)
+    when Proc
+      link_to formatted_value, link.call(record)
     else
       formatted_value
     end

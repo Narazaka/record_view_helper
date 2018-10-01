@@ -123,14 +123,18 @@ module RecordViewHelper
     # set column link setting
     # @param [Symbol] column target column
     # @param [Symbol|Hash<Symbol|Array<Symbol|Array<Symbol>>>] link setting
+    # @yield [record] format function (optional)
+    # @yieldparam [Object] record record
+    # @yieldreturn [String] link uri string
     # @return [void]
     #
     # @example
     #   = dl_for(record) do |s|
     #     - s.link :foo_id, :foo_path
     #     - s.link :id, foo_bar_path: [:foo_id, :id]
-    def link(column, link)
-      @links[column] = link
+    #     - s.link(:bar_id) {|record| baz_path(record.bar_id) }
+    def link(column, link = nil, &block)
+      @links[column] = block_given? ? block : link
     end
 
     # set column value dom tag attrs
