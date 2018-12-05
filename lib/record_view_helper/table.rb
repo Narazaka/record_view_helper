@@ -58,7 +58,7 @@ module RecordViewHelper
   def table_for(records, options = {}) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     setting = RecordValueSetting.build_from_hash!(
       records.try(:klass).try(:column_names) || records.first.try(:attributes).try(:keys) || records.first.try(:keys) || [],
-      records.first.try(:class).try(:name).try(:tableize),
+      (records.try(:klass) || records.first.try(:class)).try(:name).try(:tableize),
       options,
     )
     yield setting if block_given?
