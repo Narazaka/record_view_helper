@@ -3,6 +3,14 @@ require "action_view"
 class MyView < ActionView::Base
   include RecordViewHelper
 
+  def compiled_method_container
+    self.class
+  end
+
+  def self.compiled_method_container
+    self.class
+  end
+
   def foo_path(id)
     "foo/#{id}"
   end

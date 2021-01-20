@@ -2,7 +2,7 @@ require "spec_helper"
 require "view_and_model_helper"
 
 describe RecordViewHelper do
-  let(:context) { MyView.new(nil, locals) }
+  let(:context) { MyView.new(build_lookup_context, locals, nil) }
   let(:locals) { { records: records } }
   subject { context.render(inline: template) }
 

@@ -5,7 +5,7 @@ MyView.record_view_helper_config ||= RecordViewHelper::Config.new
 MyView.record_view_helper_config.false_view = "(false)"
 
 describe RecordViewHelper do
-  let(:context) { MyView.new(nil, locals) }
+  let(:context) { MyView.new(build_lookup_context, locals, nil) }
   let(:locals) { {} }
   let(:expect_rendered) { context.render(inline: expect_template) }
   subject { context.render(inline: template) }

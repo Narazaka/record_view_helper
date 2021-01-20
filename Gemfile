@@ -15,9 +15,10 @@ gemspec
 
 gem "bundler"
 gem "onkcop"
-gem "rails", ">= 4"
+gem "rails", "~> 6.1"
 gem "rake"
 gem "rspec"
 gem "rspec-rails", "~> 4"
 gem "simplecov"
 gem "yard"
+gem "pry-byebug"
