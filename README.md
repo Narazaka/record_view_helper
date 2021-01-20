@@ -3,6 +3,7 @@
 [![Gem](https://img.shields.io/gem/v/record_view_helper.svg)](https://rubygems.org/gems/record_view_helper)
 [![Gem](https://img.shields.io/gem/dtv/record_view_helper.svg)](https://rubygems.org/gems/record_view_helper)
 [![Inch CI](http://inch-ci.org/github/Narazaka/record_view_helper.svg)](http://inch-ci.org/github/Narazaka/record_view_helper)
+[![Ruby](https://github.com/Narazaka/record_view_helper/workflows/Ruby/badge.svg)](https://github.com/Narazaka/record_view_helper/actions?query=workflow:Ruby)
 
 table builder and description list (dl) helper for Rails / ActiveModels
 
