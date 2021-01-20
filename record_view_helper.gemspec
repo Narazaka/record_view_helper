@@ -10,9 +10,9 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/Narazaka/record_view_helper"
   s.summary     = "table builder and description list (dl) helper for Rails / ActiveModels"
   s.description = "This module provides table_for(model) and dl_for(model) helpers."
-  s.license     = "MIT"
+  s.license     = "Zlib"
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  s.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md"]
 
   if s.respond_to?(:metadata)
     s.metadata["yard.run"] = "yri"

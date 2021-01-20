@@ -48,4 +48,4 @@ $ gem install record_view_helper
 - [table-for](https://github.com/hunterae/table-for)
 
 ## License
-The gem is available as open source under the terms of the [MIT License](https://narazaka.net/license/MIT?2017).
+The gem is available as open source under the terms of the [Zlib License](LICENSE).
