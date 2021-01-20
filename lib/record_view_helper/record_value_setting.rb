@@ -182,7 +182,7 @@ module RecordViewHelper
     # calculated columns
     # @return [Array<Symbol>] (only || default columns) - except
     def columns
-      (@only.presence || @columns).map(&:to_sym).without(*@except.map(&:to_sym))
+      (@only.presence || @columns).map(&:to_sym) - @except.map(&:to_sym)
     end
   end
 end
