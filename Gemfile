@@ -12,3 +12,12 @@ gemspec
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
+
+gem "bundler"
+gem "onkcop"
+gem "rails", ">= 4"
+gem "rake"
+gem "rspec"
+gem "rspec-rails", "~> 4"
+gem "simplecov"
+gem "yard"

@@ -21,12 +21,4 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "actionview"
   s.add_runtime_dependency "activesupport"
   s.add_runtime_dependency "tzinfo-data" if RUBY_PLATFORM =~ /mswin|mingw/
-  s.add_development_dependency "bundler"
-  s.add_development_dependency "onkcop"
-  s.add_development_dependency "rails", ">= 4"
-  s.add_development_dependency "rake"
-  s.add_development_dependency "rspec"
-  s.add_development_dependency "rspec-rails", "~> 4"
-  s.add_development_dependency "simplecov"
-  s.add_development_dependency "yard"
 end
