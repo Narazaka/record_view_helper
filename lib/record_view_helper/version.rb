@@ -1,4 +1,4 @@
 module RecordViewHelper
   # version
-  VERSION = "1.3.2".freeze
+  VERSION = "1.3.3".freeze
 end
