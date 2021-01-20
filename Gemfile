@@ -15,10 +15,10 @@ gemspec
 
 gem "bundler"
 gem "onkcop"
+gem "pry-byebug"
 gem "rails", "~> 6.1"
 gem "rake"
 gem "rspec"
 gem "rspec-rails", "~> 4"
 gem "simplecov"
 gem "yard"
-gem "pry-byebug"

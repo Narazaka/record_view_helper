@@ -45,5 +45,5 @@ RSpec.configure do |config|
 end
 
 def build_lookup_context
-  ActionView::LookupContext.new(Rails.root.join('app', 'views'))
+  ActionView::LookupContext.new(Rails.root.join("app", "views"))
 end

@@ -55,7 +55,7 @@ module RecordViewHelper
   #     - s.only :id, :name
   #   / recommended for complex settings
   #   / see RecordValueSetting for details
-  def table_for(records, options = {}) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+  def table_for(records, options = {}) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength, Metrics/PerceivedComplexity
     setting = RecordValueSetting.build_from_hash!(
       records.try(:klass).try(:column_names) || records.first.try(:attributes).try(:keys) || records.first.try(:keys) || [],
       (records.try(:klass) || records.first.try(:class)).try(:name).try(:tableize),
